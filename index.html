@@ -1,23 +1,17 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta rel="linkedin" content="https://www.linkedin.com/in/myname/">
     <title>My Name - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        header {
-            padding: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta rel="linkedin" content="https://www.linkedin.com/in/myname/">
+    <link rel="stylesheet" href="styles.css" media="screen">
 </head>
 <body>
     <header>
         <h1>My Name</h1>
         <figure>
-            <img src="example.jpg" alt="Photo in Life">
+            <img src="photo_in_life.jpeg" alt="Photo in Life">
             <figcaption>Photo in Life</figcaption>
         </figure>
         <h2>Contents</h2>
@@ -42,6 +36,35 @@
                     <source src="self_introduction.mp3" type="audio/mpeg">
                 </audio>
             </aside>
+            <section id="skills">
+                <h3>Skills</h3>
+                <div class="skills" id="Technical_Skills">
+                    <div class="technical_skills" id="Programming_Language">
+                        <div>C++</div>
+                        <div>Java</div>
+                        <div>Python</div>
+                        <div>SQL</div>
+                    </div>
+                    <div class="technical_skills" id="Web_Development">
+                        <div>JavaScript</div>
+                        <div>HTML</div>
+                        <div>CSS</div>
+                        <div>PHP</div>
+                    </div>
+                    <div class="technical_skills" id="Tools">
+                        <div>Git</div>
+                        <div>Linux</div>
+                        <div>Laravel</div>
+                        <div>Django</div>
+                    </div>
+                </div> 
+                <div class="skills" id="Soft_Skills">
+                    <div>Communication</div>
+                    <div>Teamwork</div>
+                    <div>Problem Solving</div>
+                    <div>Time Management</div>
+                </div>
+            </section>
         </section>
 
         <section id="education">
@@ -58,16 +81,7 @@
             </details>
         </section>
         
-        <section id="skills">
-            <h2>Skills</h2>
-            <details>
-                <summary>Technical skills</summary>
-                <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                </ul>
-            </details>
-        </section>
+        
         
         <section id="experience">
             <h2>Professional Experience</h2>
@@ -83,29 +97,11 @@
         
         <section id="projects">
             <h2>Academic Projects</h2>
-            <table>
-                <colgroup>
-                    <col style="background-color: lightblue;">
-
-                </colgroup>
-                <caption>Projects</caption>
-                <tr>
-                    <th>Project Name</th>
-                    <th>Description</th>
-                    <th>Link</th>
-                </tr>
-                <tr>
-                    <td>Project 1</td>
-                    <td>Published <i>Article Name</i></td>
-                    <td><a href="#">Link to Project 1</a></td>
-                </tr>
-                <tr>
-                    <td>Project 2</td>
-                    <td>Description of Project 2</td>
-                    <td><a href="#">Link to Project 2</a></td>
-                </tr>
-            </table>
-
+            <div class="projects">
+                <div>project1</div>
+                <div>project2</div>
+                <div>project3</div>
+            </div>
         </section>
         
         <section id="gallery">
@@ -192,7 +188,9 @@
                 context.fillStyle = 'blue';
                 context.fillRect(10, 10, 150, 80);
             </script>
+        
         </div>
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
         <div>
             <svg width="100" height="100">
                 <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />

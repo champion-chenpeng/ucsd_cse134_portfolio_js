@@ -1,0 +1,62 @@
+/* At rule */
+@keyframes change_color {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+/* Universal */
+
+/* Element Specific */
+
+img, li, a, button{
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Class Specific */
+/* Attribute Specific */
+
+/* Id Specific */
+#skills {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f5f5f5;
+    .skills {
+        display: flex;
+        border: 1px solid blue;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+    }
+    .technical_skills {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+    }
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f5f5f5;
+    .projects {
+        display: flex;
+        border: 1px solid blue;
+        justify-content: center;
+        background-color: #f5f5f5;
+        & div {
+            border: 1px solid red;
+            padding: 10px;
+        }
+    }
+}

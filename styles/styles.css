@@ -1,0 +1,77 @@
+
+/* Basic Layout */
+
+/** Header and Footer **/
+/* header {
+    position: fixed;
+} */
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+
+    background-color: lightgray;
+}
+
+header {
+    top: 0;
+    width: 100%;
+    position: sticky;
+}
+
+header div:nth-child(1){
+    flex: 1;
+}
+header nav:nth-child(3) {
+    margin-right: 20px;
+}
+
+#header_logo > a{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+nav.header_nav {
+    display: flex;
+    margin: 0 10px;
+    & > a {
+        margin: 0 10px;
+    }
+}
+
+nav.social_media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 10px;
+    & > a {
+        margin: 0 5px;
+    }
+}
+
+a.contact_button {
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+
+/* Interaction */
+
+/** Hints **/
+img, a, button{
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/** Requests **/
+

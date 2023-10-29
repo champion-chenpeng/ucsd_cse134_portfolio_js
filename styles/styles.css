@@ -9,8 +9,6 @@ header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px;
-
     background-color: lightgray;
 }
 
@@ -30,9 +28,9 @@ header nav:nth-child(3) {
 /* Element wise */
 nav.header_nav {
     display: flex;
-    margin: 0 10px;
+    margin: 10px;
     & > a {
-        margin: 0 10px;
+        margin: 10px;
     }
 }
 
@@ -45,18 +43,12 @@ nav.social_media {
     }
 }
 
-#header_logo > a{
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0 10px;
-}
-
-a.contact_button {
+a.logo, a.contact_button {
+    font-family: 'Great Vibes', cursive;
     border: 3px solid black;
     border-radius: 5px;
     padding: 10px;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 
@@ -79,20 +71,20 @@ a {
 
 
 /* Mobile */
-@media only screen and (max-width: 600px) {
-    header {
-        flex-direction: column;
+@media only screen and (max-width: 480px) {
+    header > nav.social_media {
+        display: None;
     }
-    nav.header_nav {
-        flex-direction: column;
-    }
-    nav.social_media {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    #header_logo > a{
+    a.logo {
         margin: 10px 0;
     }
-    a.contact_button {
-        margin: 10px 0;
+}
+
+@media only screen and (max-width: 384px) {
+    footer {
+        flex-direction: column;
+    }
+    a.logo{
+        all: initial;
     }
 }

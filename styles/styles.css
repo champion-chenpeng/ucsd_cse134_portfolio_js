@@ -27,13 +27,7 @@ header nav:nth-child(3) {
     margin-right: 20px;
 }
 
-#header_logo > a{
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0 10px;
-}
-
+/* Element wise */
 nav.header_nav {
     display: flex;
     margin: 0 10px;
@@ -49,6 +43,13 @@ nav.social_media {
     & > a {
         margin: 0 5px;
     }
+}
+
+#header_logo > a{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px;
 }
 
 a.contact_button {
@@ -75,3 +76,23 @@ a {
 
 /** Requests **/
 
+
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+    nav.header_nav {
+        flex-direction: column;
+    }
+    nav.social_media {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #header_logo > a{
+        margin: 10px 0;
+    }
+    a.contact_button {
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Peng Chen</title>
+    <base href="/../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css" media="screen">
+</head>
+<body>
+    <header>
+        <div class="logo" id="header_logo">
+            <a href="index.html">Peng Chen</a>
+            <!-- <a href="index.html"><img src="media/logo.png" alt="Logo - Peng Chen"></a> -->
+        </div>
+        <nav class="header_nav">
+            <a href="pages/projects.html">Projects</a>
+            <a href="pages/about.html">About</a>
+            <a href="pages/contact.html">Contact</a>
+        </nav>
+        <!-- We would use div.social_media both in header and footer and content, so we can define its class without specific header, TODO css-->
+        <nav class="social_media">
+            <a href="mailto:chenpengacademic@gmail.com" target="_blank"><img src="media/icons/mail.png" alt="EMail" width="20"></a>
+            <a href="https://www.linkedin.com/in/peng-chen-0056aa22b" target="_blank"><img src="media/icons/linkedin.png" alt="LinkedIn" width="20"></a>
+            <a href="https://github.com/champion-chenpeng" target="_blank"><img src="media/icons/github.png" alt="Github" width="20"></a>
+            <a href="https://www.instagram.com/pengchen3123/" target="_blank"><img src="media/icons/instagram.png" alt="Insagram" width="20"></a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section id="contact">
+            <h2>Contact me</h2>
+            <section>
+                <h3>My contacts</h3>
+                <address>
+                    123 Example Street, <br /> 
+                    City, State, Zip Code
+                </address>
+                <p>Phone: 123-456-7890</p>
+                <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+            </section>
+            <section>
+                <h3>Send me a quick message</h3>
+            </section>
+            <form action="/send_message" method="post">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="name">Your Name:</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="email">Your Email:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <label for="purpose">Purpose:</label><br>
+                    <select id="purpose" name="purpose">
+                        <optgroup label="Select Purpose">
+                            <option value="Recruitment">Recruitment</option>
+                            <option value="Make Friends">Make Friends</option>
+                            <option value="Tricks">Tricks</option>
+                        </optgroup>
+                    </select><br><br>
+            
+                    <label for="location">Location:</label><br>
+                    <input list="locations" id="location" name="location" />
+                    <datalist id="locations">
+                        <option value="CA">
+                        <option value="TX">
+                        <!-- Add more location options as needed -->
+                    </datalist><br><br>
+            
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message"></textarea><br><br>
+                </fieldset>
+            
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="copyright" id="footer_copyright">&copy; 2023 Peng Chen</div>
+        <a class="contact_button" href="pages/contact.html">Contact Me</a>
+        <nav class="social_media">
+            <a href="mailto:chenpengacademic@gmail.com" target="_blank"><img src="media/icons/mail.png" alt="EMail" width="20"></a>
+            <a href="https://www.linkedin.com/in/peng-chen-0056aa22b" target="_blank"><img src="media/icons/linkedin.png" alt="LinkedIn" width="20"></a>
+            <a href="https://github.com/champion-chenpeng" target="_blank"><img src="media/icons/github.png" alt="Github" width="20"></a>
+            <a href="https://www.instagram.com/pengchen3123/" target="_blank"><img src="media/icons/instagram.png" alt="Insagram" width="20"></a>
+        </nav>
+    </footer>
+</body>
+</html>
+

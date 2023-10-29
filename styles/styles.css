@@ -26,6 +26,34 @@ header nav:nth-child(3) {
 }
 
 /** About page **/
+/*** bio ***/
+section.bio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    & > img {
+        width: 50%;
+        max-width: 500px;
+        border-radius: 40%;
+    }
+    & > section {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        & > h3 {
+            font: 2em 'Great Vibes', cursive;
+            align-self: center;
+            margin: 0;
+        }
+        & > p {
+            font: 1.2em "Gill Sans", sans-serif;
+            align-self: center;
+            margin: 0 20px; 
+        }
+    }
+}
 /*** skills ***/
 section.skills {
     display: flex;
@@ -131,6 +159,18 @@ a {
         }
         &.technical_skills img {
             width: 40px;
+        }
+    }
+    section.bio {
+        flex-direction: column;
+        & > section {
+            width: 80%;
+            & > h3 {
+                font-size: 1.5em;
+            }
+            & > p {
+                font-size: 1em;
+            }
         }
     }
 }

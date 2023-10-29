@@ -56,6 +56,7 @@ a.logo, a.contact_button {
 
 /** Hints **/
 img, a, button{
+    transition: transform 0.2s ease-in-out;
     &:hover {
         transform: scale(1.1);
     }
@@ -71,12 +72,13 @@ a {
 
 
 /* Mobile */
+/**** minimum mobile width 768 ****/
+@media only screen and (max-width: 768px) {
+
+}
 @media only screen and (max-width: 480px) {
     header > nav.social_media {
         display: None;
-    }
-    a.logo {
-        margin: 10px 0;
     }
 }
 
@@ -84,7 +86,9 @@ a {
     footer {
         flex-direction: column;
     }
-    a.logo{
-        all: initial;
+    #header_logo{
+        display: none;
     }
 }
+
+/**** minimum mobile width 320 ****/

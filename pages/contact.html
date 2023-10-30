@@ -30,21 +30,19 @@
     </header>
     <hr>
     <main>
-        <section id="contact">
-            <h2>Contact me</h2>
-            <section>
-                <h3>My contacts</h3>
+        <section class="main_section">
+            <aside class="contact_info">
+                <h3>Contact Me!</h3>
                 <address>
-                    123 Example Street, <br /> 
-                    City, State, Zip Code
+                    #### 1 Miramar St, <br /> 
+                    La Jolla, CA, 92092
                 </address>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
-            </section>
-            <section>
-                <h3>Send me a quick message</h3>
-            </section>
-            <form action="/send_message" method="post">
+                <a href="mailto:chenpengacademic@gmail.com" target="_blank"><img src="media/icons/mail.svg" alt="EMail"></a>
+                <p>I'm thrilled to connect with you! Whether you're a recruiter interested in my professional background or a friend looking to catch up, don't hesitate to reach out. I'm eager to discuss any potential opportunities or simply chat about our shared interests. Feel free to use the contact form below or reach me directly through the provided email or phone number. I look forward to our conversation!
+                </p>
+                <img src="media/triton.jpg" alt="Triton">
+            </aside>
+            <form class="message_form" action="/send_message" method="post">
                 <fieldset>
                     <legend>Contact Information</legend>
                     <label for="name">Your Name:</label><br>
@@ -78,6 +76,7 @@
             
                 <button type="submit">Submit</button>
             </form>
+            </section>
         </section>
     </main>
     <hr>

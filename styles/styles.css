@@ -1,33 +1,64 @@
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+/* Variables */
+:root {
+    --background-color: white;
+    --font-color: black;
+    --decorate-color: rgb(160, 139, 22);
+
+    --signature-font-family: 'Great Vibes', cursive;
+    --title-font: 2em 'Segoe UI', cursive; 
+    --text-font: 1.2em "Gill Sans", sans-serif;
+    --icon-font-family: 'Font Awesome 5 Free', sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color, black);
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font: var(--title-font, serif);
+}
+
+p, li, label, option, input, textarea, button {
+    font: var(--text-font, serif);
+}
 
 /* Basic Layout */
 
 /** Header and Footer **/
-/* header {
-    position: fixed;
-} */
 header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightgray;
+    background-color: var(--decorate-color, lightgray);
 }
 
 header {
-    top: 0;
-    width: 100%;
     position: sticky;
+    & div:nth-child(1){
+        flex: 1;
+    }
 }
 
-header div:nth-child(1){
-    flex: 1;
-}
-header nav:nth-child(3) {
-    margin-right: 20px;
-}
+/* Following pages may also appear in home page, so the following rules apply to class */
 
+/** Projects page **/
 /** About page **/
 /*** bio ***/
-section.bio {
+.main_section{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,32 +67,31 @@ section.bio {
     & > img {
         width: 50%;
         max-width: 500px;
-        border-radius: 40%;
+        border-radius: 5%;
     }
-    & > section {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        & > h3 {
-            font: 2em 'Great Vibes', cursive;
-            align-self: center;
-            margin: 0;
-        }
-        & > p {
-            font: 1.2em "Gill Sans", sans-serif;
-            align-self: center;
-            margin: 0 20px; 
-        }
-    }
+
 }
 /*** skills ***/
-section.skills {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px;
+.skills section:first-child {
+    flex: 0 0 50%;
 }
 
+/*** Contact Page ***/
+
+aside.contact_info {
+    & > img {
+        width: 100%;
+        max-width: 500px;
+    }
+    & > a > img {
+        width: 50px;
+    }
+}
+
+/* Class wise */
+.signature {
+    font-family: var(--signature-font-family, serif);
+}
 /* Element wise */
 nav.header_nav {
     display: flex;
@@ -71,7 +101,7 @@ nav.header_nav {
     }
 }
 
-nav.social_media {
+.social_media {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 0 10px;
@@ -84,7 +114,15 @@ nav.social_media {
     }
 }
 
-section.technical_skills {
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 10px;
+}
+
+.technical_skills {
     & > section {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -95,82 +133,113 @@ section.technical_skills {
     }
 }
 
-section.ability {
+.ability {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
-    & > h3 {
-        font-size: 1.5em;
-        margin: 10px;
-        align-self: center;
-    }
+    align-items: center;
+
     & > section { /* soft or hard */
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
-        & > div {
-            font: 1em 'Great Vibes', cursive;
-            border: 1px solid rgb(160, 139, 22);
-            border-radius: 50px;
-            margin: 10px;
-            padding: 10px;
-        }
+        
     }
 }
+#skills > * > *, .social_media {
+    & > * {
+        animation: pulse 2s infinite;
+    }
+    & *:nth-child(odd) {
+        animation-delay: 1s;
+    }
+    
+    & > div {
+        font: 1em var(--icon-font-family, serif);
+        border: 1px solid var(--decorate-color, lightgray);
+        border-radius: 50px;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    & div:nth-child(odd) {
+        background-color: var(--decorate-color, lightgray);
+    }
 
-a.logo, a.contact_button {
-    font-family: 'Great Vibes', cursive;
+}
+
+.message_form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid var(--decorate-color, lightgray);
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--decorate-color, lightgray);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+  
+
+.logo, .contact_button, button {
+    background-color: var(--decorate-color, lightgray);
+    font-family: var(--signature-font-family, serif);
     border: 3px solid black;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    cursor: pointer;
+
+    animation: pulse 2s infinite;
+    &:hover {
+        background-color: gold;
+    }
 }
-
-
-
 
 /* Interaction */
 
 /** Hints **/
-img, a, button{
+a, button{
     transition: transform 0.2s ease-in-out;
     &:hover {
         transform: scale(1.1);
     }
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+
+
+/** Animations **/
+
 
 /** Requests **/
-
-
 
 /* Mobile */
 /**** minimum mobile width 768 ****/
 @media only screen and (max-width: 768px) {
-    section.skills {
+    .main_section {
         flex-direction: column;
-        & > section {
-            flex-direction: column;
-        }
-        &.technical_skills img {
-            width: 40px;
-        }
-    }
-    section.bio {
-        flex-direction: column;
-        & > section {
-            width: 80%;
-            & > h3 {
-                font-size: 1.5em;
-            }
-            & > p {
-                font-size: 1em;
-            }
+        & > aside > img {
+            display: none;
         }
     }
 }
@@ -190,4 +259,5 @@ a {
     }
 }
 
-/**** minimum mobile width 320 ****/
+@media only screen and (max-width: 320dvw) {
+}

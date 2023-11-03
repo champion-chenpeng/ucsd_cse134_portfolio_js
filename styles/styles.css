@@ -163,25 +163,24 @@ nav.header_nav {
         
     }
 }
-#skills > * > *, .social_media {
+.technical_skills section, .ability section, .social_media {
     & > * {
         animation: pulse 2s infinite;
     }
     & *:nth-child(odd) {
         animation-delay: 1s;
     }
-    
-    & > div {
-        border: 1px solid var(--decorate-color, lightgray);
-        border-radius: 50px;
-        margin: 10px;
-        padding: 10px;
-    }
-    
-    & div:nth-child(odd) {
-        background-color: var(--fine-decorate-color, lightgray);
-    }
+}
+.ability div{
+    font: 1em var(--icon-font-family, serif);
+    border: 1px solid var(--decorate-color, lightgray);
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px;
+}
 
+.ability div:nth-child(odd) {
+    background-color: var(--decorate-color, lightgray);
 }
 
 .message_form {

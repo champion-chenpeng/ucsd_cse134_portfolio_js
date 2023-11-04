@@ -163,14 +163,7 @@ nav.header_nav {
         
     }
 }
-.technical_skills section, .ability section, .social_media {
-    & > * {
-        animation: pulse 2s infinite;
-    }
-    & *:nth-child(odd) {
-        animation-delay: 1s;
-    }
-}
+
 .ability div{
     font: 1em var(--icon-font-family, serif);
     border: 1px solid var(--decorate-color, lightgray);
@@ -219,7 +212,6 @@ textarea {
     box-sizing: border-box;
 }
   
-
 .logo, .contact_button, button {
     background-color: var(--decorate-color, lightgray);
     font-family: var(--script-font-family, cursive);
@@ -228,13 +220,14 @@ textarea {
     padding: 10px;
     margin: 10px;
     cursor: pointer;
-
-    animation: pulse 2s infinite;
     &:hover {
         background-color: gold;
     }
 }
-
+.contact_button {
+    animation: pulse 2s infinite;
+    
+}
 /* Interaction */
 
 /** Hints **/

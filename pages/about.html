@@ -31,7 +31,11 @@
     <hr>
     <main>
         <section class="main_section">
-            <img src="media/PhotoInLife.jpeg" alt="Profile Picture">
+            <picture>
+                <source media="(min-width: 768px)" srcset="media/PhotoInLife.jpeg" width="500dvw">
+                <source media="(max-width: 768px)" srcset="media/portrait_vertical.jpeg" width="200dvw">
+                <img src="media/portrait_vertical.jpeg" alt="portrait" />
+            </picture>
             <aside>
                 <h3>Peng Chen</h3>
                 <p>Dedicated and accomplished professional with expertise in <em>backend development and high performance computation</em>, passionate about <em>web/UX design</em>.</p>

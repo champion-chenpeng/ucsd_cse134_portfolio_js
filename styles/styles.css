@@ -1,3 +1,4 @@
+/* Animation */
 @keyframes pulse {
     0% {
       transform: scale(1);
@@ -10,16 +11,35 @@
     }
 }
 
+/* Fonts */
+@font-face {
+    font-family: "PTSerif";
+    src: url(../fonts/PTSerif.ttf);
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url(../fonts/OpenSans.ttf);
+}
+@font-face {
+    font-family: "Pacifico";
+    src: url(../fonts/Pacifico.ttf);
+}
+@font-face {
+    font-family: "Agbalumo";
+    src: url(../fonts/Agbalumo.ttf);
+}
+
 /* Variables */
 :root {
     --background-color: white;
     --font-color: black;
     --decorate-color: rgb(160, 139, 22);
+    --fine-decorate-color: color-mix(in oklab, var(--decorate-color, lightgray) 70%, gold);
 
-    --signature-font-family: 'Great Vibes', cursive;
-    --title-font: 2em 'Segoe UI', cursive; 
-    --text-font: 1.2em "Gill Sans", sans-serif;
-    --icon-font-family: 'Font Awesome 5 Free', sans-serif;
+    --script-font-family: "Pacifico", cursive;
+    --display-font-family: "Agbalumo", serif;
+    --primary-font-family: "PTSerif", serif;
+    --secondary-font-family: "OpenSans", sans-serif;
 
 }
 
@@ -28,12 +48,8 @@ a {
     color: var(--font-color, black);
 }
 
-h1, h2, h3, h4, h5, h6, legend {
-    font: var(--title-font, serif);
-}
-
-p, li, label, option, input, textarea, button {
-    font: var(--text-font, serif);
+* {
+    font-family: var(--primary-font-family, serif);
 }
 
 /* Basic Layout */
@@ -48,7 +64,7 @@ header, footer {
 
 header {
     position: sticky;
-    & div:nth-child(1){
+    & div:nth-child(2){
         flex: 1;
     }
 }
@@ -65,11 +81,25 @@ header {
     justify-content: space-around;
     margin: 10px;
     & > img {
-        width: 50%;
+        width: 50dvw;
         max-width: 500px;
         border-radius: 5%;
     }
-
+    & > aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        padding: 10px;
+        & > h3 {
+            font-family: var(--display-font-family, cursive);
+            font-size: 2em;
+            margin: 10px;
+        }
+        & > p {     
+            font-family: var(--secondary-font-family, sans-serif);
+        }
+    }
 }
 /*** skills ***/
 .skills section:first-child {
@@ -88,10 +118,6 @@ aside.contact_info {
     }
 }
 
-/* Class wise */
-.signature {
-    font-family: var(--signature-font-family, serif);
-}
 /* Element wise */
 nav.header_nav {
     display: flex;
@@ -110,16 +136,7 @@ nav.header_nav {
     }
     & img {
         width: 20px;
-        height: 20px;
     }
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    padding: 10px;
 }
 
 .technical_skills {
@@ -155,7 +172,6 @@ aside {
     }
     
     & > div {
-        font: 1em var(--icon-font-family, serif);
         border: 1px solid var(--decorate-color, lightgray);
         border-radius: 50px;
         margin: 10px;
@@ -163,7 +179,7 @@ aside {
     }
     
     & div:nth-child(odd) {
-        background-color: var(--decorate-color, lightgray);
+        background-color: var(--fine-decorate-color, lightgray);
     }
 
 }
@@ -175,7 +191,6 @@ aside {
     padding: 20px;
     border: 1px solid var(--decorate-color, lightgray);
     border-radius: 5px;
-    font-family: Arial, sans-serif;
     white-space: nowrap;
 }
 
@@ -184,9 +199,14 @@ fieldset {
     padding: 0;
 }
 
+legend {
+    font-family: var(--display-font-family, cursive);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 label {
     display: block;
-    margin-bottom: 5px;
 }
 
 input,
@@ -203,7 +223,7 @@ textarea {
 
 .logo, .contact_button, button {
     background-color: var(--decorate-color, lightgray);
-    font-family: var(--signature-font-family, serif);
+    font-family: var(--script-font-family, cursive);
     border: 3px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -226,6 +246,9 @@ a, button{
     }
 }
 
+section:has(img) {
+    background-color: var(--background-color, white);
+}
 
 
 /** Animations **/
@@ -242,7 +265,7 @@ a, button{
             display: none;
         }
     }
-}
+    }
 @media only screen and (max-width: 480px) {
     header > nav.social_media {
         display: None;
@@ -259,5 +282,3 @@ a, button{
     }
 }
 
-@media only screen and (max-width: 320dvw) {
-}

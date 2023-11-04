@@ -43,13 +43,13 @@
 
 }
 
+* {
+    font-family: var(--primary-font-family, serif);
+}
+
 a {
     text-decoration: none;
     color: var(--font-color, black);
-}
-
-* {
-    font-family: var(--primary-font-family, serif);
 }
 
 /* Basic Layout */
@@ -70,10 +70,6 @@ header {
 }
 
 /* Following pages may also appear in home page, so the following rules apply to class */
-
-/** Projects page **/
-/** About page **/
-/*** bio ***/
 .main_section{
     display: flex;
     flex-direction: row;
@@ -107,7 +103,6 @@ header {
 }
 
 /*** Contact Page ***/
-
 aside.contact_info {
     & > img {
         width: 100%;

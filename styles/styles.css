@@ -52,6 +52,10 @@ a {
     color: var(--font-color, black);
 }
 
+section:has(img) {
+    background-color: var(--background-color, white);
+}
+
 /* Basic Layout */
 
 /** Header and Footer **/
@@ -62,11 +66,8 @@ header, footer {
     background-color: var(--decorate-color, lightgray);
 }
 
-header {
-    position: sticky;
-    & div:nth-child(2){
-        flex: 1;
-    }
+.filling_blank {
+    flex: 1;
 }
 
 /* Following pages may also appear in home page, so the following rules apply to class */
@@ -114,6 +115,8 @@ aside.contact_info {
 }
 
 /* Element wise */
+
+/** Header **/
 nav.header_nav {
     display: flex;
     margin: 10px;
@@ -134,15 +137,17 @@ nav.header_nav {
     }
 }
 
+/** about **/
 .technical_skills {
-    & > section {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
+    
     & img {
         width: 60px;
         margin: 10px;
     }
+}
+.programming_languages, .developer_tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .ability {
@@ -171,6 +176,7 @@ nav.header_nav {
     background-color: var(--decorate-color, lightgray);
 }
 
+/** Contact Page **/
 .message_form {
     display: flex;
     flex-direction: column;
@@ -207,6 +213,17 @@ textarea {
     box-sizing: border-box;
 }
   
+
+/* Interaction */
+
+/** Hints **/
+a, button{
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .logo, .contact_button, button {
     background-color: var(--decorate-color, lightgray);
     font-family: var(--script-font-family, cursive);
@@ -223,23 +240,6 @@ textarea {
     animation: pulse 2s infinite;
     
 }
-/* Interaction */
-
-/** Hints **/
-a, button{
-    transition: transform 0.2s ease-in-out;
-    &:hover {
-        transform: scale(1.1);
-    }
-}
-
-section:has(img) {
-    background-color: var(--background-color, white);
-}
-
-
-/** Animations **/
-
 
 /** Requests **/
 

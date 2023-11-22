@@ -11,18 +11,6 @@
     }
 }
 
-@keyframes fadeout {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-}
-
 /* Fonts */
 @font-face {
     font-family: "PTSerif";
@@ -196,6 +184,7 @@ nav.header_nav {
     padding: 20px;
     border: 1px solid var(--decorate-color, lightgray);
     border-radius: 5px;
+    white-space: nowrap;
 }
 
 fieldset {
@@ -237,27 +226,15 @@ textarea {
 
 textarea {
     height: 20dvh;
-    resize: none;
-}
-
-output {
-    display: block;
-    margin-top: 10px;
-    font-style: italic;
-    font-size: 0.7em;
-}
-
-output.info {
-    color: black; /* Change color for info messages */
 }
 
 output.error {
     color: red; /* Change color for error messages */
-    /* fade out error messages */
-    animation: fadeout 5s forwards;
 }
 
-
+output.info {
+    color: #008000; /* Change color for info messages */
+}
 
 .output_list {
     display: flex;

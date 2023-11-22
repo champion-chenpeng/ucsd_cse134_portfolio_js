@@ -25,31 +25,30 @@
                 </p>
                 <img src="media/triton.jpg" alt="Triton">
             </aside>
-            <form class="message_form" action="https://httpbin.org/post" method="post" onsubmit="return validateForm()">
+            <form class="message_form" action="https://httpbin.org/post" method="post">
                 <input type="hidden" name="possible_bot" value="true">
-                <input type="hidden" name="form-errors" id="formErrorsInput">
             
                 <fieldset>
                     <legend>Contact Information</legend>
                     <label for="name" required>Your Name:</label><br>
-                    <input type="text" id="name" name="name" placeholder="First Last" required pattern="[A-z\s]+">
+                    <input type="text" id="name" name="name" placeholder="First Last" required>
                     <div class="output_list">
-                        <output for="name" class="error" id="nameError"></output>
-                        <output for="name" class="info" id="nameInfo"></output>
+                        <output for="name" class="error">error-message-if-any</output>
+                        <output for="name" class="info">info-message-if-any</output>
                     </div>
             
                     <label for="email" required>Your Email:</label><br>
                     <input type="email" id="email" name="email" placeholder="example@xxx.xxx" required>
                     <div class="output_list">
-                        <output for="email" class="error" id="emailError"></output>
-                        <output for="email" class="info" id="emailInfo"></output>
+                        <output for="email" class="error">error-message-if-any</output>
+                        <output for="email" class="info">info-message-if-any</output>
                     </div>
             
                     <label for="message" required>Message:</label><br>
-                    <textarea id="message" name="message" placeholder="Nice to meet you!" minlength="10" maxlength="500" pattern="^[A-Za-z0-9\s@!,.']*$" required oninput="masking(this);lengthMonitor(this)"></textarea>
+                    <textarea id="message" name="message" placeholder="Nice to meet you!" minlength="10" maxlength="500" required></textarea>
                     <div class="output_list">
-                        <output for="message" id="messageError"></output>
-                        <output for="message" id="messageInfo"></output>
+                        <output for="message" class="error">error-message-if-any</output>
+                        <output for="message" class="info">info-message-if-any</output>
                     </div>
                 </fieldset>
             

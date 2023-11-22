@@ -46,7 +46,14 @@
     --background-color: white;
     --font-color: black;
     --decorate-color: rgb(160, 139, 22);
-    --fine-decorate-color: color-mix(in oklab, var(--decorate-color, lightgray) 70%, gold);
+    
+    --background-color-light: white;
+    --font-color-light: black;
+    --decorate-color-light: rgb(160, 139, 22);
+
+    --background-color-dark: rgb(81, 75, 66);
+    --font-color-dark: rgb(218, 214, 214);
+    --decorate-color-dark: rgb(133, 124, 78);
 
     --script-font-family: "Pacifico", cursive;
     --display-font-family: "Agbalumo", serif;
@@ -59,9 +66,18 @@
     font-family: var(--primary-font-family, serif);
 }
 
+body {
+    background-color: var(--background-color, white);
+    color: var(--font-color, black);
+}
+
+img {
+    opacity: 0.9;
+}
 a {
     text-decoration: none;
-    color: var(--font-color, black);
+    /* follow the body's color */
+    color: inherit;
 }
 
 section:has(img) {
@@ -77,6 +93,53 @@ header, footer {
     justify-content: center;
     background-color: var(--decorate-color, lightgray);
 }
+
+/* theme switch */
+.theme-switch {
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--light-text);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
 
 .filling_blank {
     flex: 1;
@@ -150,7 +213,7 @@ nav.header_nav {
 }
 
 /** about **/
-.technical_skills {
+#technical_skills {
     
     & img {
         width: 60px;

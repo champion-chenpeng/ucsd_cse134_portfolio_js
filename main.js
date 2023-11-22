@@ -1,35 +1,61 @@
 var form_errors = [];
+// Listener
+document.addEventListener('DOMContentLoaded', async function () {
+    await fetchAndInject('pages/header.html', 'header');
+    await fetchAndInject('pages/technical_skills.html', 'technical_skills');
+    await fetchAndInject('pages/projects_list.html', 'projects_list');
+    await fetchAndInject('pages/footer.html', 'footer');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Fetch and inject header
-    fetch('pages/header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('header').outerHTML = html;
-        });
-    
-    // Fetch and inject technical skills
-    fetch('pages/technical_skills.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementsByClassName('technical_skills')[0].outerHTML = html;
-        });
+    setupThemeToggle();
+});
+// Fetch and inject HTML
+async function fetchAndInject(url, targetId) {
+    try {
+        const response = await fetch(url);
+        const html = await response.text();
+        document.getElementById(targetId).outerHTML = html;
+    } catch (error) {
+        console.error(`Error fetching or injecting ${url}:`, error);
+    }
+}
+// Theme toggle
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
 
-    // Fetch and inject projects list
-    fetch('pages/projects_list.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('projects_list').outerHTML = html;
-        });
-    
+    themeToggle.addEventListener('change', function () {
+        if (themeToggle.checked) {
+            setDarkMode();
+            localStorage.setItem('theme', 'dark');
+        } else {
+            setLightMode();
+            localStorage.setItem('theme', 'light');
+        }
+    });
 
-    // Fetch and inject footer
-    fetch('pages/footer.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('footer').outerHTML = html;
-        });
-})
+    // Check the user's preference from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        setDarkMode();
+        themeToggle.checked = true;
+    } else {
+        setLightMode();
+    }
+}
+
+function setDarkMode() {
+    document.documentElement.style.setProperty('--background-color', 'var(--background-color-dark)');
+    document.documentElement.style.setProperty('--font-color', 'var(--font-color-dark)');
+    document.documentElement.style.setProperty('--decorate-color', 'var(--decorate-color-dark)');
+}
+
+function setLightMode() {
+    document.documentElement.style.setProperty('--background-color', 'var(--background-color-light)');
+    document.documentElement.style.setProperty('--font-color', 'var(--font-color-light)');
+    document.documentElement.style.setProperty('--decorate-color', 'var(--decorate-color-light)');
+}
+
+
+// Validate form
 
 function validateForm() {
     // Your validation logic here

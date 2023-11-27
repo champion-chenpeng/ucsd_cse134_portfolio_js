@@ -20,6 +20,9 @@ async function fetchAndInject(url, targetId) {
 }
 // Theme toggle
 function setupThemeToggle() {
+    const themeSwitcher = document.getElementById('themeSwitch');
+    themeSwitch.classList.remove('js-hidden');
+
     const themeToggle = document.getElementById('themeToggle');
 
     themeToggle.addEventListener('change', function () {

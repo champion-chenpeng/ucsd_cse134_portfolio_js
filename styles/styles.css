@@ -100,7 +100,6 @@ header, footer {
 
 /* theme switch */
 .switch {
-    display: none;
     position: relative;
     width: 60px;
     height: 34px;
@@ -355,6 +354,11 @@ a, button{
 .contact_button {
     animation: pulse 2s infinite;
     
+}
+
+/** JS related **/
+.js-hidden {
+    display: none;
 }
 
 /** Requests **/

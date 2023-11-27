@@ -55,6 +55,10 @@
     --font-color-dark: rgb(218, 214, 214);
     --decorate-color-dark: rgb(133, 124, 78);
 
+    --canvas-color-moon: yellow;
+    --canvas-color-sun: #e85d04;
+    --canvas-color-night: black;
+
     --script-font-family: "Pacifico", cursive;
     --display-font-family: "Agbalumo", serif;
     --primary-font-family: "PTSerif", serif;
@@ -95,21 +99,12 @@ header, footer {
 }
 
 /* theme switch */
-.theme-switch {
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    color: var(--light-text);
-}
-
 .switch {
+    display: none;
     position: relative;
-    display: inline-block;
     width: 60px;
     height: 34px;
 }
-
 
 .slider {
     position: absolute;
@@ -118,7 +113,7 @@ header, footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: skyblue;
     border-radius: 50px;
     transition: 0.4s;
 }
@@ -130,19 +125,19 @@ header, footer {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: rgb(255, 94, 0);
+    background-color: var(--canvas-color-sun, #e85d04);
     border-radius: 50px;
     transition: 0.4s;
 }
 input:checked + .slider {
-    background-color: black;
+    background-color: var(--canvas-color-night, black);
     
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px);
-    background-color: black;
-    box-shadow: inset -0.5em -0.3em yellow;
+    transform: translateX(26px); /* botton shift */
+    background-color: var(--canvas-color-night, black);
+    box-shadow: inset -0.5em -0.3em var(--canvas-color-moon, yellow); /* waxing moon */
 }
 
 

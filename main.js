@@ -1,10 +1,10 @@
 var form_errors = [];
 // Listener
 document.addEventListener('DOMContentLoaded', async function () {
-    await fetchAndInject('pages/header.html', 'header');
-    await fetchAndInject('pages/technical_skills.html', 'technical_skills');
-    await fetchAndInject('pages/projects_list.html', 'projects_list');
-    await fetchAndInject('pages/footer.html', 'footer');
+    await fetchAndInject('pages/component/header.html', 'header');
+    await fetchAndInject('pages/component/technical_skills.html', 'technical_skills');
+    await fetchAndInject('pages/component/projects_list.html', 'projects_list');
+    await fetchAndInject('pages/component/footer.html', 'footer');
 
     setupThemeToggle();
 });
@@ -21,7 +21,7 @@ async function fetchAndInject(url, targetId) {
 // Theme toggle
 function setupThemeToggle() {
     const themeSwitcher = document.getElementById('themeSwitch');
-    themeSwitch.classList.remove('js-hidden');
+    themeSwitcher.classList.remove('js-hidden');
 
     const themeToggle = document.getElementById('themeToggle');
 
